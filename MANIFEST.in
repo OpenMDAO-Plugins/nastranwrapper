@@ -1,0 +1,5 @@
+
+
+graft src/nastranwrapper/sphinx_build/html
+recursive-include src/nastranwrapper/test *.py
+

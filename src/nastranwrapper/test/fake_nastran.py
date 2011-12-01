@@ -10,21 +10,21 @@ import difflib
 # Nastran. This program will make sure that you are supplying
 # the right input file and can parse the output file correctly
 
-# The first argument will be what the input file should be
-# The second argument will be what the output should be
-# The third argument will be nastran's first argument: the real input file
+# The first argument will be nastran's first argument: the real input file
+# The second argument will be what the input file should be
+# The third argument will be what the output should be
 # All arguments following are intended for the real nastran, but
 # will be ignored.
 
 def main():
     if len(sys.argv) < 4:
         print "This program takes at least 3 arguments:\n" + \
-              "./fake_nastran ideal_input ideal_output nastran's input"
+              "./fake_nastran nastran's_input ideal_input ideal_output"
         sys.exit(1)
 
-    ideal_input_filename = sys.argv[1]
-    ideal_output_filename = sys.argv[2]
-    nastran_input_filename = sys.argv[3]
+    nastran_input_filename = sys.argv[1]
+    ideal_input_filename = sys.argv[2]
+    ideal_output_filename = sys.argv[3]
 
     fh = open(ideal_input_filename, "r")
     ideal_input = fh.readlines()

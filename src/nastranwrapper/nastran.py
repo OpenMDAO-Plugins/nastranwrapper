@@ -8,7 +8,7 @@ from shutil import rmtree
 
 from openmdao.lib.components.external_code import ExternalCode
 
-from openmdao.lib.datatypes.api import Float, Int, Array, Str, Bool
+from openmdao.lib.datatypes.api import Float, Int, Array, Str, Bool, List
 
 from openmdao.util.filewrap import FileParser
 
@@ -34,8 +34,8 @@ class NastranComponent(ExternalCode):
                                               placeholder variables.")
     nastran_command = Str(iotype="in", desc="Location of nastran \
                                              executable.")
-    nastran_command_args = Str(iotype="in", desc="Arguments to the \
-                                                  nastran command.")
+    nastran_command_args = List(Str, iotype="in",
+                                desc="Arguments to the nastran command.")
 
     output_filename = Str(iotype="out", desc="Output filename.")
 
@@ -149,7 +149,6 @@ class NastranComponent(ExternalCode):
                                     "most probably mistyped")
 
         # let's do our work in a tmp dir
-        # let's do our work in a tmp dir
         tmpdir = mkdtemp(dir = self.output_tempdir_dir)
         tmppath = path.join(tmpdir, "input.bdf")
         tmpfh = open(tmppath, "w")
@@ -191,10 +190,14 @@ class NastranComponent(ExternalCode):
         print self.output_filename
 
         # Then we run the nastran file
-        self.command = self.nastran_command + " " + \
-                       tmppath + " " + self.nastran_command_args + \
-                       " batch=no out=" + tmpdir + \
-                       " dbs=" + tmpdir
+        if self.nastran_command == 'python':  # True when using fake_nastran.py
+            self.command = [self.nastran_command,
+                            self.nastran_command_args[0], tmppath]
+            self.command.extend(self.nastran_command_args[1:])
+        else:
+            self.command = [self.nastran_command, tmppath]
+            self.command.extend(self.nastran_command_args)
+        self.command.extend(["batch=no", "out=" + tmpdir, "dbs=" + tmpdir])
 
         # This calls ExternalCode's execute which will run
         # the nastran command via subprocess

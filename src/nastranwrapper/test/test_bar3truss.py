@@ -23,9 +23,11 @@ class TestBar3Truss(unittest.TestCase):
         static.stdout = os.devnull
         static.stderr = os.devnull
         static.nastran_filename = "bar3truss/vared_bar3.bdf"
-        #static.nastran_command = "/msc/nastran/bin/nastran"
-        static.nastran_command = "python fake_nastran.py " + \
-           "test_bar3truss_correct_input.bdf test_bar3truss_correct_output.out"
+        #static.nastran_command = ["/msc/nastran/bin/nastran"]
+        static.nastran_command = "python"
+        static.nastran_command_args = ["fake_nastran.py",
+                                       "test_bar3truss_correct_input.bdf",
+                                       "test_bar3truss_correct_output.out"]
 
         # set some variables.
         static.bar1_area = 18.88

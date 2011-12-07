@@ -72,16 +72,3 @@ nastran_util.py
    :show-inheritance:
     
         
-.. index:: nastranwrapper.py
-
-.. _nastranwrapper.nastranwrapper.py:
-
-nastranwrapper.py
------------------
-
-.. automodule:: nastranwrapper.nastranwrapper
-   :members:
-   :undoc-members:
-   :show-inheritance:
-    
-        

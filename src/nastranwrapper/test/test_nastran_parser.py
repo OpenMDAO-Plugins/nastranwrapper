@@ -29,7 +29,7 @@ class TestNastranParser(unittest.TestCase):
         self.assertTrue(len(set([len(row) for row in self.parser.grids[0]])) == 1)
 
     def test_simple(self):
-        self.go("practice-grid.1.txt")
+        self.go("practice-grids/practice-grid.1.txt")
 
         # check the header's right
         clean = self.parser.headers[0]["clean"]
@@ -53,7 +53,7 @@ class TestNastranParser(unittest.TestCase):
         self.assertAlmostEqual(float(r2), 2.451840E-01)
 
     def test_repeated_columns(self):
-        self.go("practice-grid.2.txt")
+        self.go("practice-grids/practice-grid.2.txt")
         clean = self.parser.headers[0]["clean"]
         self.assertTrue(clean == "stresses in rod elements (crod)")
         grid = self.parser.grids[0]
@@ -81,7 +81,7 @@ class TestNastranParser(unittest.TestCase):
         self.assertAlmostEqual(float(ax[2]), 1.005818E+05)
 
     def test_family_confusion(self):
-        self.go("practice-grid.3.txt")
+        self.go("practice-grids/practice-grid.3.txt")
         h = "stresses in layered composite elements (quad4)"
         self.assertTrue(h == self.parser.headers[0]["clean"])
 
@@ -111,7 +111,7 @@ class TestNastranParser(unittest.TestCase):
     # or not something's a family or a header without being a human
     # So, heuristics.
     def test_family_confusion_and_dash_in_header(self):
-        self.go("practice-grid.7.txt")
+        self.go("practice-grids/practice-grid.7.txt")
         h = "forces in bar elements (cbar)"
         self.assertTrue(h == self.parser.headers[0]["clean"])
 
@@ -129,7 +129,7 @@ class TestNastranParser(unittest.TestCase):
     # this example is a little funny. It has zeroes at the beginning
     # and no subcase, mostly due to the fact that the subcase is in the grid
     def test_funny(self):
-        self.go("practice-grid.4.txt")
+        self.go("practice-grids/practice-grid.4.txt")
         h = "maximum applied loads"
         self.assertTrue(h == self.parser.headers[0]["clean"])
 
@@ -150,7 +150,7 @@ class TestNastranParser(unittest.TestCase):
         self.assertAlmostEqual(float(t2), 1e5)
 
     def test_spaces_in_headers_and_annoying_header(self):
-        self.go("practice-grid.5.txt")
+        self.go("practice-grids/practice-grid.5.txt")
         h = "real eigenvector no.2"
 
         self.assertTrue(h in self.parser.headers[0]["clean"])
@@ -163,7 +163,7 @@ class TestNastranParser(unittest.TestCase):
 
 
     def test_spaces_in_multiple_headers(self):
-        self.go("practice-grid.6.txt")
+        self.go("practice-grids/practice-grid.6.txt")
         h = "forces of single-point constraint"
 
         self.assertTrue(self.parser.headers[0]["clean"] == h)
@@ -177,7 +177,7 @@ class TestNastranParser(unittest.TestCase):
         self.assertAlmostEqual(float(r2), 0)
 
     def test_row_width(self):
-        self.go("practice-grid.row-width.txt")
+        self.go("practice-grids/practice-grid.row-width.txt")
         h = "S T R E S S E S   I N   Q U A D R I L A T E R A L   E L E M E N T S   ( Q U A D 4 )        OPTION = BILIN"
 
         self.assertTrue(self.parser.headers[0]["actual"].strip() == h)

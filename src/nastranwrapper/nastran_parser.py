@@ -39,6 +39,19 @@ class NastranParser(object):
         # parse into pages
         pages = [[]]
         for line in self.text:
+
+            # Under certain conditions, Nastran puts three
+            #  asterisks into the FLAG field of some output
+            #  tables. This confuses the parser code
+            #  that exists as of March 14, 2012.
+            #  The ideal solution would be to fix the parser
+            #  code but the simple solution is to just replace
+            #  the three asterisks with spaces wherever they
+            #  occur in the ouptut files.
+            # Current usage of this plugin wrapper
+            #  seems to indicate that this is completely fine for now
+            line = line.replace( "***", "   " )
+
             if len(re.sub(" +", "", line)) == 0:
                 continue
             pages[-1].append(line)

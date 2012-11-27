@@ -52,8 +52,8 @@ class NastranComponent(ExternalCode):
     keep_last_iteration = Bool(True, iotype="in", desc="If I am \
     deleting temporary files, should I keep the last one?")
 
-    def __init__(self, *args, **kwargs):
-        super(NastranComponent, self).__init__(*args, **kwargs)
+    def __init__(self):
+        super(NastranComponent, self).__init__()
 
         # We're initializing parser here so that it's not an
         # honest-to-god trait, just an attribute that can

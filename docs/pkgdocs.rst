@@ -14,9 +14,9 @@ Package Metadata
 
 - **entry_points**:: 
 
-    [openmdao.container]
-    nastranwrapper.nastran.NastranComponent=nastranwrapper.nastran:NastranComponent
     [openmdao.component]
+    nastranwrapper.nastran.NastranComponent=nastranwrapper.nastran:NastranComponent
+    [openmdao.container]
     nastranwrapper.nastran.NastranComponent=nastranwrapper.nastran:NastranComponent
 
 - **home-page:** https://github.com/OpenMDAO-Plugins/nastranwrapper
@@ -44,5 +44,5 @@ Package Metadata
 
 - **summary:** OpenMDAO component wrapper for MSC Nastran
 
-- **version:** 0.13
+- **version:** 0.14
 

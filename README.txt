@@ -4,5 +4,5 @@ installed with a valid license before this wrapper will work.
 
 To view the Sphinx documentation for this distribution, type:
 
-plugin_docs nastranwrapper
+openmdao docs nastranwrapper
 

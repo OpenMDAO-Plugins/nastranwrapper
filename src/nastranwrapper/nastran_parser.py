@@ -105,6 +105,7 @@ class NastranParser(object):
             messages_line = None
             for line_index, line in enumerate(grid):
                 if re.search("USER WARNING MESSAGE \d+", line) or \
+                   re.search("USER INFORMATION MESSAGE \d+", line) or \
                    re.search("SYSTEM INFORMATION MESSAGE \d+", line):
                     messages_line = line_index
                     break
@@ -587,6 +588,8 @@ class NastranParser(object):
         for row in available_rows:
             result.append([])
             for column in column_nums:
+                if subcase == 6:
+                    print "rula row column, my_grid", row, column, mygrid[row][column]
                 result[-1].append(mygrid[row][column])
 
         if row_width > 1:

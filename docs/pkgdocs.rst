@@ -16,7 +16,7 @@ Package Metadata
 
     [openmdao.component]
     nastranwrapper.test.nastran_models.bar10_static_nastran.Bar10Static=nastranwrapper.test.nastran_models.bar10_static_nastran:Bar10Static
-    nastranwrapper.test.nastran_models.bar25_static_nastran.Bar25Static=nastranwrapper.test.nastran_models.bar25_static_nastran:Bar25Static
+    nastranwrapper.test.nastran_models.comp_module_static_nastran.Comp_Module=nastranwrapper.test.nastran_models.comp_module_static_nastran:Comp_Module
     nastranwrapper.test.bar3truss.bar3_static_nastran.Bar3Static=nastranwrapper.test.bar3truss.bar3_static_nastran:Bar3Static
     nastranwrapper.test.nastran_models.bar3_static_nastran.Bar3Static=nastranwrapper.test.nastran_models.bar3_static_nastran:Bar3Static
     nastranwrapper.test.nastran_models.comp_plate_static_nastran.Comp_Plate=nastranwrapper.test.nastran_models.comp_plate_static_nastran:Comp_Plate
@@ -25,11 +25,11 @@ Package Metadata
     nastranwrapper.test.nastran_models.dome_static_nastran.DomeStatic=nastranwrapper.test.nastran_models.dome_static_nastran:DomeStatic
     nastranwrapper.test.nastran_models.blade_2dv_static_nastran.BladeStatic=nastranwrapper.test.nastran_models.blade_2dv_static_nastran:BladeStatic
     nastranwrapper.test.bar3truss.bar3_optimization.Bar3Optimization=nastranwrapper.test.bar3truss.bar3_optimization:Bar3Optimization
-    nastranwrapper.test.nastran_models.comp_module_static_nastran.Comp_Module=nastranwrapper.test.nastran_models.comp_module_static_nastran:Comp_Module
+    nastranwrapper.test.nastran_models.bar25_static_nastran.Bar25Static=nastranwrapper.test.nastran_models.bar25_static_nastran:Bar25Static
     nastranwrapper.test.bar3truss.bar3_nastran.Bar3Truss=nastranwrapper.test.bar3truss.bar3_nastran:Bar3Truss
     [openmdao.container]
     nastranwrapper.test.nastran_models.bar10_static_nastran.Bar10Static=nastranwrapper.test.nastran_models.bar10_static_nastran:Bar10Static
-    nastranwrapper.test.nastran_models.bar25_static_nastran.Bar25Static=nastranwrapper.test.nastran_models.bar25_static_nastran:Bar25Static
+    nastranwrapper.test.nastran_models.comp_module_static_nastran.Comp_Module=nastranwrapper.test.nastran_models.comp_module_static_nastran:Comp_Module
     nastranwrapper.test.bar3truss.bar3_static_nastran.Bar3Static=nastranwrapper.test.bar3truss.bar3_static_nastran:Bar3Static
     nastranwrapper.test.nastran_models.bar3_static_nastran.Bar3Static=nastranwrapper.test.nastran_models.bar3_static_nastran:Bar3Static
     nastranwrapper.test.nastran_models.comp_plate_static_nastran.Comp_Plate=nastranwrapper.test.nastran_models.comp_plate_static_nastran:Comp_Plate
@@ -38,7 +38,7 @@ Package Metadata
     nastranwrapper.test.nastran_models.dome_static_nastran.DomeStatic=nastranwrapper.test.nastran_models.dome_static_nastran:DomeStatic
     nastranwrapper.test.nastran_models.blade_2dv_static_nastran.BladeStatic=nastranwrapper.test.nastran_models.blade_2dv_static_nastran:BladeStatic
     nastranwrapper.test.bar3truss.bar3_optimization.Bar3Optimization=nastranwrapper.test.bar3truss.bar3_optimization:Bar3Optimization
-    nastranwrapper.test.nastran_models.comp_module_static_nastran.Comp_Module=nastranwrapper.test.nastran_models.comp_module_static_nastran:Comp_Module
+    nastranwrapper.test.nastran_models.bar25_static_nastran.Bar25Static=nastranwrapper.test.nastran_models.bar25_static_nastran:Bar25Static
     nastranwrapper.test.bar3truss.bar3_nastran.Bar3Truss=nastranwrapper.test.bar3truss.bar3_nastran:Bar3Truss
 
 - **home-page:** https://github.com/OpenMDAO-Plugins/nastranwrapper

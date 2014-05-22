@@ -9,4 +9,5 @@ Contents:
     
    usage.rst
    srcdocs
+   gui_tutorial
    pkgdocs

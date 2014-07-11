@@ -5,6 +5,8 @@ import pkg_resources
 from openmdao.main.api import SimulationRoot
 from nastranwrapper.test.bar3truss.bar3_static_nastran import Bar3Static
 
+from openmdao.util import shellproc
+
 ORIG_DIR = os.getcwd()
 DIRECTORY = pkg_resources.resource_filename('nastranwrapper', 'test')
 
@@ -20,8 +22,9 @@ class TestBar3Truss(unittest.TestCase):
 
         static = Bar3Static()
         static.delete_tmp_files = False
-        static.stdout = os.devnull
-        static.stderr = os.devnull
+
+        static.stdout = shellproc.DEV_NULL
+        static.stderr = shellproc.DEV_NULL
         static.nastran_filename = "bar3truss/vared_bar3.bdf"
         #static.nastran_command = ["/msc/nastran/bin/nastran"]
         static.nastran_command = "python"

@@ -17,7 +17,7 @@ def _sys_path_add(toadd=None):
         distdir = os.path.dirname(os.path.dirname(__file__))
         sys.path = [distdir] + [os.path.join(distdir, p) for p in toadd] + sys.path
 
-_sys_path_add(['src', 'src/nastranwrapper', 'src/nastranwrapper/test', 'src/nastranwrapper/test/bar3truss', 'src/nastranwrapper/test/practice_grids', 'src/nastranwrapper/test/bdf_files', 'src/nastranwrapper/test/nastran_models'])
+_sys_path_add(['src', 'src/nastranwrapper', 'src/nastranwrapper/test', 'src/nastranwrapper/test/bar3truss', 'src/nastranwrapper/test/bdf_files', 'src/nastranwrapper/test/nastran_models', 'src/nastranwrapper/test/practice_grids'])
 
 # General configuration
 # ---------------------

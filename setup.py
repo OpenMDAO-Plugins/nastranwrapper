@@ -129,7 +129,7 @@ kwargs = {'author': 'Andrew Rodriguez',
               'nastranwrapper.test.bar3truss',
               'nastranwrapper.test.nastran_models'],
  'url': 'https://github.com/OpenMDAO-Plugins/nastranwrapper',
- 'version': '0.15',
+ 'version': '0.17',
  'zip_safe': False}
 
 

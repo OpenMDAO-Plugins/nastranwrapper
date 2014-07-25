@@ -66,5 +66,5 @@ Package Metadata
 
 - **summary:** OpenMDAO component wrapper for MSC Nastran
 
-- **version:** 0.15
+- **version:** 0.17
 
